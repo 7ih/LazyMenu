@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>LazyMenu Docs</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="docs/style.css" type="text/css" />
+    <link rel="icon" href="img/favicon.ico?v=2">
+  </head>
+  <body>
+    <div id="sidebar">
+      <b>LazyMenu</b>
+      <a href="/">Home</a> <br>
+      <a href="https://lazymenu.hmarin.repl.co/getting-started.html">Getting Started</a> <br>
+      <i>Docs</i> <br>
+      <a href="/examples.html">Examples</a>
+      <div>version: v0.0</div>
+    </div>
+    
+<main>
+
+<h1>Docs</h1>
+      
+<h2>Buttons</h2>
+
+There are currently two button types: <code>main</code> & <code>misc</code> <br><br>
+
+<h2>Button Creation</h2>
+
+Use the <code>Menu.CREATE.[button type](text, function)</code> function to create a button. <br>
+<b>Example:</b> <code>Menu.CREATE.main("Hi!", function() { alert("You clicked the button!") });</code> <br><br>
+
+<h2>Button Configurations</h2>
+
+To configure Main buttons, use <code>Menu.main</code> <br>
+To configure Misc buttons, use <code>Menu.misc</code> <br>
+To configure all buttons, use <code>Menu.all</code> <br><br>
+
+<h3>Width</h3>
+Configure the width of a button type. <br>
+The default value is dependant on the string length and font size. <br>
+<b>Example:</b> <code>Menu.main.width = 100;</code> <br><br>
+
+<h3>Height</h3>
+Configure the height of a button type. <br>
+The default value is dependant on the font size. <br>
+<b>Example:</b> <code>Menu.misc.height = 50;</code> <br><br>
+
+<h3>Font Size</h3>
+Configure the font size of a button type. <br>
+The default value is 64 for Main, and 32 for Misc. <br>
+<b>Example:</b> <code>Menu.all.fontSize = 50;</code> <br><br>
+
+<h3>Top</h3>
+Configure a button type's distance from the top of the canvas. <br>
+The default value is 50 for Main, and 32 for Misc. <br>
+<b>Example:</b> <code>Menu.main.top = 20;</code> <br><br>
+
+<h3>Left</h3>
+Configure a button type's distance from the left of the canvas. <br>
+The default value is 50 for Main & Misc. <br>
+<b>Example:</b> <code>Menu.misc.left = 30;</code> <br><br>
+
+<h3>Margin</h3>
+Configure a button type's distance between other buttons. <br>
+The default value is 10 for Main & Misc. <br>
+<b>Example:</b> <code>Menu.all.margin = 20;</code> <br><br>
+
+<h3>Left Padding</h3>
+Configure the text's distance from the left edge of the button of a button type. <br>
+The default value is 5 for Main & Misc. <br>
+<b>Example:</b> <code>Menu.main.paddingLeft = 10;</code> <br><br>
+
+<h3>Font</h3>
+Configure the text font of a button type. <br>
+The default value is Arial. <br>
+<b>Example:</b> <code>Menu.misc.font = "Arial";</code> <br><br>
+
+<h3>Text</h3>
+Configure the text color of a button type. <br>
+The default value is black. <br>
+<b>Example:</b> <code>Menu.all.text = ["green", "lime"];</code> <br>
+<i>Note: the value must be an array. The array's length must be 2 or less. If the array's length is more than 1, the color will switch for each button.</i> <br><br>
+
+<h3>Background</h3>
+Configure the background color of a button type. <br>
+The default value is dodgerBlue and red for Main, and lime for Misc. <br>
+<b>Example:</b> <code>Menu.main.bg = ["blue", "orange"];</code> <br>
+<i>Note: the value must be an array. The array's length must be 2 or less. If the array's length is more than 1, the color will switch for each button.</i> <br><br>
+
+<h2>Button Options</h2>
+Button options are an optional object parameter when creating buttons. <br><br>
+
+<h3>removeEventListeners</h3>
+If set to true, the click & hover event listeners will be removed. This is useful if the canvas will be reset with another page. <br>
+The default value is True for Main, and False for Misc. <br>
+<b>Example:</b> <code>Menu.CREATE.main("Lorem", function(){ alert() }, {removeEventListeners: false})</code> <br><br>
+
+<h3>centerText</h3>
+If set to true, the text will be aligned in the center of the button. <br>
+The default value is false for Main and Misc. <br>
+<b>Example:</b> <code>Menu.CREATE.main("ipsum", function(){ alert() }, {centerText: true});</code> <br><br>
+
+<h2>Images</h2>
+
+To display an image in the menu, use <code>Menu.img.src = [image source]</code>. <br>
+The source can either be a local link, or absolute link. <br><br>
+<b>Examples:</b> <br>
+Relative Link: <code>Menu.img.src = "image.jpg" //image.jpg is a local file</code> <br>
+Absolute Link: <code>Menu.img.src = "https://example.com/img/image.jpg"</code> <br><br>
+
+<h2>Image Configuration</h2>
+
+<h3>Top</h3>
+Configure the image's distance from the top of the canvas. <br>
+The default value is 65. <br>
+<b>Example:</b> <code>Menu.img.top = 50;</code> <br><br>
+
+<h3>Left</h3>
+Configure the image's distance from the left of the canvas. <br>
+The default value is 500. <br>
+<b>Example:</b> <code>Menu.img.left = 200;</code> <br><br>
+
+<h2>Functions</h2>
+
+<h3>Menu.draw</h3>
+Draw the menu after configuration. <br>
+<i>Parameters: canvas element</i> <br>
+<b>Example:</b> <code>Menu.draw(canvas) // canvas = canvas element</code> <br><br>
+
+<h2>Miscellaneous Functions</h2>
+
+<h3>Menu.posOnButton</h3>
+Detect if a position (cursor) is over another position (button). <br>
+<i>Parameters: pos1 (cursor), pos2 (button), button configuration (width & height)</i> <br>
+<b>Example:</b> <code>Menu.draw(canvas) // canvas = canvas element</code> <br><br>
+
+<h3>Menu.drawButton</h3>
+Draw a button. <br>
+<i>Parameters: pos, config, color</i> <br>
+<b>Example:</b> <code>Menu.drawButton(Menu.buttons.main, Menu.main, true);</code> <br><br>
+
+<h3>Number.prototype.realPos</h3>
+Caluclate the correct position of a cursor for accurate tracking. <br>
+<i>Parameters: axis</i> <br>
+<b>Example:</b> <code>event.clientX.realPos("x");</code> <br><br>
+
+</main>
+
+    <script async defer src="docs/getVersion.js"></script>
+  </body>
+</html>

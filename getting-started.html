@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>LazyMenu Docs</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="docs/style.css" type="text/css" />
+    <link rel="icon" href="img/favicon.ico?v=2">
+  </head>
+  <body>
+    <div id="sidebar">
+      <b>LazyMenu</b>
+      <a href="/">Home</a> <br>
+      <i>Getting Started</i> <br>
+      <a href="/docs.html">Docs</a> <br>
+      <a href="/examples.html">Examples</a>
+      <div>version: v0.0</div>
+    </div>
+
+<main>
+<h1>Purpose</h1>
+
+This is an API for the HTML canvas, written in Javascript. This should be used for canvas browser games/apps. This is especially useful for lazy developers who don't want to use any CSS (To clarify, there is no CSS used in LazyMenu). Honestly, this isn't very useful in terms of practicality or visual appeal. <br><br>
+
+<h1>Getting Started</h1>
+First, you need to install LazyMenu. There are two ways you can do this: <br><br>
+<ol>
+  <li>Directly download/copy <a href="https://lazymenu.hmarin.repl.co/libs/LazyMenu.js" target="_blank">the LazyMenu file</a> and add it as a JS file to your project. Remember to refer to it in the HTML body!</li>
+  <li>Download the file via HTML by adding the following code to the body: 
+  <code><xmp><script src="https://lazymenu.hmarin.repl.co/libs/LazyMenu.js"></script></xmp></code></li>
+  Afterwards, you should have access to LazyMenu.
+</ol>
+
+<h2>How to use</h2>
+To use LazyMenu, make sure you have a canvas element. To use the API, you will need to use the Menu object. To create a button, use Menu.CREATE as shown below: <br><br>
+
+<code>Menu.CREATE.main("Hello");</code> <br><br>
+
+This will tell the API to create a Main button that says "Hello, World!". <br>
+
+That's cool and all, but what about <i>other types of buttons?</i> <br><br>
+In Lazymenu, there are two types of buttons: Main and Misc. To add a Misc button: <br><br>
+
+<code>Menu.CREATE.misc("World!");</code> <br><br>
+
+Then, you need to tell the API to actually draw the menu. You can achieve this by calling the Menu.draw() function, like this: <br><br>
+
+<code>Menu.draw(canvas);</code> <br><br>
+      
+The canvas variable is, obviously, the canvas element. <br><br>
+
+If you would write all of that into a javascript file, the end result should look like this: <br>
+<pre><code>const canvas = document.getElementById("canvas"); // canvas element
+
+Menu.CREATE.main("Hello");
+Menu.CREATE.misc("World!");
+
+Menu.draw(canvas);</code></pre> <br>
+
+If the HTML was set up correctly, then the page should show two buttons. You can also view the output <a href="/examples/buttons.html" target="_blank">here.</a> However, you can't interact with the buttons yet because they don't have a function attached to them. To add some interactivity, add a function as a second parameter when creating a button. For example: <br>
+<pre><code>function clickHandler() {
+  alert("You clicked the button!");   
+}
+        
+Menu.CREATE.main("Click Me!", clickHandler)</code></pre> <br>
+
+Now when this button is clicked, it will fire the clickHandler function, which gives a window alert. You can view the output <a href="/examples/functions.html" target="_blank">here.</a> <br> 
+<i>Congratulations, you made a working button!</i> <br><br>
+
+<b>More information will be in the docs.</b> For example, editing button positions, colors, options, etc.
+
+</main>
+
+    <script async defer src="docs/getVersion.js"></script>
+  </body>
+</html>

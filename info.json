@@ -1,0 +1,25 @@
+{
+  "version": "v1.0",
+  "examples": [
+    {
+      "name": "Buttons",
+      "link": "/examples/buttons.html",
+      "source": "/examples/scripts/buttons.js"
+    },
+    {
+      "name": "Functions",
+      "link": "/examples/functions.html",
+      "source": "/examples/scripts/functions.js"
+    },
+    {
+      "name": "Cyberpong Game Menu",
+      "link": "https://cyberpong.hmarin.repl.co/",
+      "source": "https://cyberpong.hmarin.repl.co/main.js"
+    },
+    {
+      "name": "Cyberpuck Game Menu",
+      "link": "https://cyberpuck.hmarin.repl.co/",
+      "source": "https://cyberpuck.hmarin.repl.co/main.js"
+    }
+  ]
+}
