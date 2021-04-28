@@ -1,13 +1,13 @@
 const canvas = document.getElementsByTagName('canvas')[0];
 
 Menu.CREATE.main("Install", function() {
-  window.location.href = "https://lazymenu.hmarin.repl.co/getting-started.html";
+  window.location.href = "/getting-started.html";
 });
 Menu.CREATE.main("Docs", function() {
-  window.location.href = "https://lazymenu.hmarin.repl.co/docs.html";
+  window.location.href = "/docs.html";
 });
 Menu.CREATE.main("Examples", function() {
-  window.location.href = "https://lazymenu.hmarin.repl.co/examples.html";
+  window.location.href = "/examples.html";
 });
 
 let version;
@@ -32,7 +32,7 @@ Menu.CREATE.misc("About", async function() {
   );
 });
 Menu.CREATE.misc("Page Source", async function() {
-  window.open("https://lazymenu.hmarin.repl.co/index/script.js", '_blank');
+  window.open("/index/script.js", '_blank');
 });
 Menu.CREATE.misc("Projects", function() {
   window.open("https://projects.hmarin.repl.co/", '_blank');
