@@ -14,10 +14,10 @@
   <body>
     <div id="sidebar">
       <b>LazyMenu</b>
-      <a href="/">Home</a> <br>
+      <a href="/LazyMenu">Home</a> <br>
       <i>Getting Started</i> <br>
-      <a href="/docs.html">Docs</a> <br>
-      <a href="/examples.html">Examples</a>
+      <a href="docs.html">Docs</a> <br>
+      <a href="examples.html">Examples</a>
       <div>version: v0.0</div>
     </div>
 
@@ -29,9 +29,9 @@ This is an API for the HTML canvas, written in Javascript. This should be used f
 <h1>Getting Started</h1>
 First, you need to install LazyMenu. There are two ways you can do this: <br><br>
 <ol>
-  <li>Directly download/copy <a href="https://lazymenu.hmarin.repl.co/libs/LazyMenu.js" target="_blank">the LazyMenu file</a> and add it as a JS file to your project. Remember to refer to it in the HTML body!</li>
+  <li>Directly download/copy <a href="https://cdn.jsdelivr.net/gh/7ih/LazyMenu@main/libs/LazyMenu.js" target="_blank">the latest LazyMenu file from jsdeliver</a> and add it as a JS file to your project. Remember to refer to it in the HTML body!</li>
   <li>Download the file via HTML by adding the following code to the body: 
-  <code><xmp><script src="https://lazymenu.hmarin.repl.co/libs/LazyMenu.js"></script></xmp></code></li>
+  <code><xmp><script src="https://cdn.jsdelivr.net/gh/7ih/LazyMenu@main/libs/LazyMenu.js"></script></xmp></code></li>
   Afterwards, you should have access to LazyMenu.
 </ol>
 
@@ -61,14 +61,14 @@ Menu.CREATE.misc("World!");
 
 Menu.draw(canvas);</code></pre> <br>
 
-If the HTML was set up correctly, then the page should show two buttons. You can also view the output <a href="/examples/buttons.html" target="_blank">here.</a> However, you can't interact with the buttons yet because they don't have a function attached to them. To add some interactivity, add a function as a second parameter when creating a button. For example: <br>
+If the HTML was set up correctly, then the page should show two buttons. You can also view the output <a href="examples/buttons.html" target="_blank">here.</a> However, you can't interact with the buttons yet because they don't have a function attached to them. To add some interactivity, add a function as a second parameter when creating a button. For example: <br>
 <pre><code>function clickHandler() {
   alert("You clicked the button!");   
 }
         
 Menu.CREATE.main("Click Me!", clickHandler)</code></pre> <br>
 
-Now when this button is clicked, it will fire the clickHandler function, which gives a window alert. You can view the output <a href="/examples/functions.html" target="_blank">here.</a> <br> 
+Now when this button is clicked, it will fire the clickHandler function, which gives a window alert. You can view the output <a href="examples/functions.html" target="_blank">here.</a> <br> 
 <i>Congratulations, you made a working button!</i> <br><br>
 
 <b>More information will be in the docs.</b> For example, editing button positions, colors, options, etc.
