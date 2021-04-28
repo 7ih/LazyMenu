@@ -3,13 +3,13 @@
   "examples": [
     {
       "name": "Buttons",
-      "link": "/examples/buttons.html",
-      "source": "/examples/scripts/buttons.js"
+      "link": "examples/buttons.html",
+      "source": "examples/scripts/buttons.js"
     },
     {
       "name": "Functions",
-      "link": "/examples/functions.html",
-      "source": "/examples/scripts/functions.js"
+      "link": "examples/functions.html",
+      "source": "examples/scripts/functions.js"
     },
     {
       "name": "Cyberpong Game Menu",
