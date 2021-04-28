@@ -73,6 +73,10 @@ Menu.draw = function (canvas) {
     return;
   }
   Menu.canvas = canvas;
+  var canvas = Menu.canvas;
+  var ctx = canvas.getContext('2d');
+  var main = Menu.buttons.main;
+  var misc = Menu.buttons.misc;
 
   var props = Menu.all;
   for (let i = 0; i < Object.keys(props).length; i++) {
@@ -84,28 +88,28 @@ Menu.draw = function (canvas) {
     }
   }
 
-  function calculateButtonWidth(id) {
-    var array = Menu.buttons[id];
-    var max = 0;
-    for (let i = 0; i < array.length; i++) {
-      var stringLength = array[i].text.length;
-      if (stringLength > max) max = stringLength;
+  var buttonTypes = Object.keys(Menu.buttons);
+  for (let i = 0; i < buttonTypes.length; i++) {
+    var type = buttonTypes[i];
+    var config = Menu[type];
+    var texts = Menu.buttons[type];
+    if (!config.width) {
+      var longest = "";
+      for (let i = 0; i < texts.length; i++) {
+        var text = texts[i].text;
+        if (text.length > longest.length) longest = text;
+        
+        if (i+1 == texts.length) {
+          console.log(text)
+          ctx.save();
+          ctx.font = `${config.fontSize}px ${config.font}`;
+          Menu[type].width = Math.ceil(ctx.measureText(longest).width) + config.paddingLeft + 3;
+          ctx.restore();
+        }
+      }
     }
-    var buttonWidth = Menu[id].fontSize * (max / 1.8) + Menu[id].paddingLeft;
-    return buttonWidth;
+    if (!config.height) Menu[type].height = Math.ceil(config.fontSize * 1.4);
   }
-
-  if (!Menu.main.width) Menu.main.width = calculateButtonWidth("main");
-  if (!Menu.main.height) Menu.main.height = Menu.main.fontSize * 1.4;
-
-  if (!Menu.misc.width) Menu.misc.width = calculateButtonWidth("misc");
-  if (!Menu.misc.height) Menu.misc.height = Menu.misc.fontSize * 1.4;
-
-  var canvas = Menu.canvas;
-  var ctx = canvas.getContext('2d');
-
-  var main = Menu.buttons.main;
-  var misc = Menu.buttons.misc;
 
   function menuButtonClick(e) {
     e.preventDefault();
@@ -234,9 +238,8 @@ Menu.drawButton = function (button, config, evenColor) {
     var textX = button.centerText ? button.x + config.width / 2 : button.x + config.paddingLeft;
     ctx.fillText(button.text, textX, button.y + config.fontSize);
   }
-  if (!document.fonts.check(`${config.fontSize}px ${config.font}`)) {
+  if (!document.fonts.check(`${config.fontSize}px ${config.font}`))
     document.fonts.load(`${config.fontSize}px ${config.font}`).then(execDraw);
-  }
   else execDraw();
 }
 
