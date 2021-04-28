@@ -1,13 +1,13 @@
 const canvas = document.getElementsByTagName('canvas')[0];
 
 Menu.CREATE.main("Install", function() {
-  window.location.href = "/getting-started.html";
+  window.location.href = "/LazyMenu/getting-started.html";
 });
 Menu.CREATE.main("Docs", function() {
-  window.location.href = "/docs.html";
+  window.location.href = "/LazyMenu/docs.html";
 });
 Menu.CREATE.main("Examples", function() {
-  window.location.href = "/examples.html";
+  window.location.href = "/LazyMenu/examples.html";
 });
 
 let version;
@@ -32,10 +32,13 @@ Menu.CREATE.misc("About", async function() {
   );
 });
 Menu.CREATE.misc("Page Source", async function() {
-  window.open("/index/script.js", '_blank');
+  window.open("/LazyMenu/index/script.js", '_blank');
 });
 Menu.CREATE.misc("Projects", function() {
   window.open("https://projects.hmarin.repl.co/", '_blank');
+});
+Menu.CREATE.misc("Github Repo", function() {
+  window.open("https://github.com/7ih/LazyMenu", '_blank');
 });
 
 Menu.main.fontSize = 80;
