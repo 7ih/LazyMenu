@@ -100,7 +100,6 @@ Menu.draw = function (canvas) {
         if (text.length > longest.length) longest = text;
         
         if (i+1 == texts.length) {
-          console.log(text)
           ctx.save();
           ctx.font = `${config.fontSize}px ${config.font}`;
           Menu[type].width = Math.ceil(ctx.measureText(longest).width) + config.paddingLeft + 3;
