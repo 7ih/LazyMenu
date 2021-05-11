@@ -24,9 +24,7 @@ Menu.CREATE.misc("About", async function() {
   This page is created using the LazyMenu API for JS canvas, no CSS.
   Current version: ${version}
   
-  Created by:
-  @7ih Github
-  @hMarin replit.com
+  Created by @7ih on Github, Replit
   
   Read the docs for more information.`
   );
