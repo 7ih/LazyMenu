@@ -33,7 +33,7 @@ Menu.CREATE.misc("Page Source", async function() {
   window.open("/LazyMenu/index/script.js", '_blank');
 });
 Menu.CREATE.misc("Projects", function() {
-  window.open("https://projects.hmarin.repl.co/", '_blank');
+  window.open("https://projects.7ih.repl.co/", '_blank');
 });
 Menu.CREATE.misc("Github Repo", function() {
   window.open("https://github.com/7ih/LazyMenu", '_blank');
